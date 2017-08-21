@@ -5,6 +5,8 @@ extension Config {
         // allow fuzzy conversions for these types
         // (add your own types here)
         Node.fuzzy = [Row.self, JSON.self, Node.self]
+        
+        addConfigurable(middleware: ApiMiddleware(), name: "api")
 
         try setupProviders()
         try setupPreparations()
